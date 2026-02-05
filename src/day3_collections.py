@@ -42,6 +42,7 @@ last_3_hours = temperature[-3:]
 print("Last 3 hours readings:", last_3_hours)
 
 #task3
+
 screen_res = (1920, 1080)
 print("Current Resolution:", screen_res[0], "x", screen_res[1])
 screen_res[0] = 1280
