@@ -1,7 +1,5 @@
 # Task 2 
 
-
-    
 import math_operations
 
 result_power = math_operations.power(2, 10)

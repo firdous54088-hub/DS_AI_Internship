@@ -1,0 +1,3 @@
+name, age, salary
+Ruby, 34, 50000
+anam, 21, 40000
