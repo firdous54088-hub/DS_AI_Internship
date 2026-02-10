@@ -1,10 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Feb  9 12:25:10 2026
-
-@author: Raj Mohammad
-"""
-
+# Task 1
 name = input("Enter your name: ")
 goal = input("Enter your daily goal: ")
 
