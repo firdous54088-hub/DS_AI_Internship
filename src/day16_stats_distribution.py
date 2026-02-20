@@ -104,21 +104,32 @@ print("\nTotal Outliers:", len(outliers))
 # Task 3
 
 import numpy as np
+import pandas as pd
+import seaborn as sns
 import matplotlib.pyplot as plt
 
-# Step 1: Create a skewed dataset (dice rolls)
-data = np.random.randint(1, 7, size=10000)
+np.random.seed(42)
 
-# Step 2: Repeat sampling
+population = np.random.exponential(scale=50000, size=100000)
+
+df = pd.DataFrame({"Income": population})
+
+# plot histogram for skewed data
+plt.figure(figsize=(6,4))
+sns.histplot(df["Income"], bins=50, kde=True)
+plt.title("Original Population Distribution (Right-Skewed)")
+plt.show()
+
 sample_means = []
 
-for i in range(1000):
-    sample = np.random.choice(data, size=30)
-    sample_means.append(np.mean(sample))
+for _ in range(1000):
+    sample = np.random.choice(population, size=30)
+    sample_means.append(sample.mean())
 
-# Step 3: Plot histogram of sample means
-plt.hist(sample_means, bins=30)
-plt.title("Central Limit Theorem: Distribution of Sample Means")
-plt.xlabel("Sample Mean")
-plt.ylabel("Frequency")
+sample_means = pd.Series(sample_means)
+
+# plot histogram for sample distrubution
+plt.figure(figsize=(6,4))
+sns.histplot(sample_means, bins=30, kde=True)
+plt.title("Distribution of Sample Means (n=30, 1000 samples)")
 plt.show()
